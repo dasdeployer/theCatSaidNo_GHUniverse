@@ -32,3 +32,8 @@ jobs:
       run: |
         pip install pytest
         pytest
+    - name: Deploy to Azure    
+      uses: azure/webapps-deploy@v1
+      with:
+          app-name:  azurebooth
+          publish-profile: ${{ secrets.LAB_PUBLISH_PROFILE }}  
